@@ -1,6 +1,5 @@
-const {
-    Model
-} = require('sequelize');
+"use strict";
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         /**
@@ -13,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             User.hasMany(Post, {
                 foreignKey: 'user_id'
             });
-            Post.belongsTo(User)
+            Post.belongsTo(User);
         }
     }
     User.init({
